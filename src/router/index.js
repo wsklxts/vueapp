@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store/index'
 import HelloWorld from '@/pages/HelloWorld/HelloWorld'
+import test from '@/pages/test'
 import personTask from '@/pages/personTask/personTask'
 
 
@@ -72,6 +73,11 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
     },
     {
       path: '/personTask',

@@ -4,10 +4,10 @@
       <a slot="right" @click="detailBtn"> 详情</a>
     </XHeader>
     <div class="template">
-
       <group>
         <Cell  title="请假类型" :value="form.type" is-link @click.native="select()"></Cell>
       </group>
+
 
       <group title="我的假期">
         <datetime

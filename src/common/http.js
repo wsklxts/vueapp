@@ -96,12 +96,15 @@ export const $http = {
   _paramFormat:function(c){
     return{
       contentType:c && c.ContentType? c.ContentType : "application/json",
-      loading:c && c.loading ? c.loading : ""
+      loading:c && c.loading ? c.loading : "",
+      showLoading:c ? (c.showLoading ? c.showLoading : false) : true,
     }
   },
   get: function(url,params={},config){
     const orm = this._paramFormat(config)
-    stores.dispatch('showLoading',orm.loading)
+    if(orm.showLoading){
+      stores.dispatch('showLoading',orm.loading)
+    }
     return new Promise((resolve,reject) => {
       axios.get(url,{params:params},{ headers:{"Content-Type":orm.contentType}})
         .then(response => {
@@ -114,7 +117,9 @@ export const $http = {
   },
   post: function (url,data = {},config) {
     const orm = this._paramFormat(config)
-    stores.dispatch('showLoading',orm.loading)
+    if(orm.showLoading){
+      stores.dispatch('showLoading',orm.loading)
+    }
     return new Promise((resolve, reject) => {
       axios.post(url, data,{ headers:{"Content-Type":orm.contentType}})
       //axios.post(url, data)

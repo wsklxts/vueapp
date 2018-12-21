@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>render</title>
+  <script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <smart-item :data="data"></smart-item>
+  <button @click="change('img')">切换为图片为组件</button>
+  <button @click="change('video')">切换为视频为组件</button>
+  <button @click="change('text')">切换为文本组件</button>
+</div>
+<script>
+  // 图片组件选项
+  var ImgItem = {
+    props: ['data'],
+    render: function(createElement) {
+      return createElement('div', [
+        createElement('p', '图片组件'),
+        createElement('img', {
+          attrs: {
+            src: this.data.url
+          }
+        })
+      ]);
+    }
+  }
+  // 视频组件
+  var VideoItem = {
+    props: ['data'],
+    render: function(createElement) {
+      return createElement('div', [
+        createElement('p', '视频组件'),
+        createElement('video', {
+          attrs: {
+            src: this.data.url,
+            controls: 'controls',
+            autoplay: 'autoplay'
+          }
+        })
+      ]);
+    }
+  };
+  /*纯文本组件*/
+  var TextItem = {
+    props: ['data'],
+    render: function(createElement) {
+      return createElement('div', [
+        createElement('p', '纯文本组件'),
+        createElement('p', this.data.text)
+      ]);
+    }
+  };
+
+  Vue.component('smart-item', {
+    functional: true,
+    render: function(createElement, context) {
+      console.log(this);
+      console.log(context);
+      function getComponent() {
+        var data = context.props.data;
+        if (data.type === 'img') return ImgItem;
+        if (data.type === 'video') return VideoItem;
+        return TextItem;
+      }
+      return createElement(
+        getComponent(),
+        {
+          props: {
+            data: context.props.data
+          }
+        },
+        context.children
+      )
+    },
+    props: {
+      data: {
+        type: Object,
+        required: true
+      }
+    }
+  });
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        data: {}
+      }
+    },
+    methods: {
+      change: function(type) {
+        if (type === 'img') {
+          this.data = {
+            type: 'img',
+            url: 'https://raw.githubusercontent.com/iview/iview/master/assets/logo.png'
+          }
+        } else if (type === 'video') {
+          this.data = {
+            type: 'video',
+            url: 'http://vjs.zencdn.net/v/oceans.mp4'
+          }
+        } else if (type === 'text') {
+          this.data = {
+            type: 'text',
+            content: '这是一段纯文本'
+          }
+        }
+      }
+    },
+    created: function() {
+      this.change('img');
+    }
+  });
+</script>
+</body>
+</html>
