@@ -1,6 +1,14 @@
-# tsharenmobile
 
-> A Vue.js project
+
+
+### 集成表单设计器动态渲染控件  <br /> 
+### miniform(基于jquery mini-ui做的表单设计器):
+### demo：http://jilalahk.com/miniform <br /> 
+### github 地址 https://github.com/wsklxts/mini-form  <br /> 
+### 设计完点保存 http://jilalahk.com/vueapp 查看渲染结果 <br /> 
+#### 后台接口采用django drf 点击保存将数据保存到数据库，然后前端获取接口进行渲染
+
+
 
 ## Build Setup
 
