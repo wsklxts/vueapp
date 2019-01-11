@@ -1,9 +1,9 @@
 
 
 
-##集成表单设计器动态渲染控件
-##miniform(基于jquery mini-ui做的表单设计器) 设计效果 http://jilalahk.com/miniform
-##设计完点保存 http://jilalahk.com/vueapp 查看渲染结果
+##集成表单设计器动态渲染控件 <br /> 
+##miniform(基于jquery mini-ui做的表单设计器) 设计效果 http://jilalahk.com/miniform <br /> 
+##设计完点保存 http://jilalahk.com/vueapp 查看渲染结果 <br /> 
 
 
 
