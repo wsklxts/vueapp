@@ -7,7 +7,7 @@
     <keep-alive>
     </keep-alive>
 
-    <router-view></router-view>
+    <router-view v-transition></router-view>
 
   </div>
 </template>

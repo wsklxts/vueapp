@@ -63,6 +63,7 @@ const router = new Router({
     })
 
   },
+  base:"/vueapp/",
   mode: "history",
   routes: [
     {
