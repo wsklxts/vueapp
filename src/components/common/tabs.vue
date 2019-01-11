@@ -4,7 +4,6 @@
     <!--命名路由-->
     <ul>
 
-
       <router-link  to="/personTask/taskWait"  tag="li">
         <!--<div class="tabImg"  :class="{ active1: $route.path== '/personTask/taskWait'}">-->
           <!--{{$route.path.indexOf('personTask') !== -1}}-->
@@ -92,6 +91,9 @@
          background: url(../../../static/tabImg/个人任务.png) no-repeat center center !important;
          background-size:0.50rem !important;
           color:#3096fd;
+          & + div{
+              color:#3096fd;
+          }
        }
       & .active2{
           background: url(../../../static/tabImg/应用中心.png) no-repeat center center !important;

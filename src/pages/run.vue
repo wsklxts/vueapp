@@ -3,6 +3,7 @@
 
   export default {
     render: function(cElement, context) {
+      console.log(this.temp);
       return cElement(componentslist[this.temp.type],{
         props: {
           attrs: this.temp.attrs

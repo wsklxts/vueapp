@@ -7,11 +7,16 @@
     <div class="template">
       <!--{{$route.path}}-->
       <!--HelloWorld-->
-      <div class="">
-        <x-button type="default" @show="false" text="提交" @click.native="onConfirm"></x-button>
-        <x-button type="default" text="提交2" @click.native="onConfirm2"></x-button>
-      </div>
+      <!--<div class="">-->
+        <!--<x-button type="default" @show="false" text="提交" @click.native="onConfirm"></x-button>-->
+        <!--<x-button type="default" text="提交2" @click.native="onConfirm2"></x-button>-->
+      <!--</div>-->
 
+      <router-link  to="/renderControl"  tag="a">
+        <h1 style="text-align: center">渲染控件示列</h1>
+      </router-link>
+
+      <renderControl></renderControl>
 
       <tabs></tabs>
     </div>
@@ -29,6 +34,7 @@
   import tabs from "@/components/common/tabs"
   import apply from "@/pages/apply/apply"
   import manage from "@/pages/manage/manage"
+  import renderControl from "@/pages/renderControl"
 
   import BScroll from 'better-scroll'
   import qs from 'qs'
@@ -95,7 +101,7 @@
       Datetime,
       XInput,
       XTextarea,
-      XButton,Toast,Checklist,Scroller,LoadMore,tabs,Swiper,SwiperItem,apply,manage
+      XButton,Toast,Checklist,Scroller,LoadMore,tabs,Swiper,SwiperItem,apply,manage,renderControl
     },
     data () {
       return {

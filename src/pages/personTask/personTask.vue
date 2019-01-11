@@ -6,7 +6,7 @@
   <div class="personTask"  :style="paTop">
 
     <tab bar-active-color="#3096fd" active-color="#3096fd" v-model="index">
-      <tab-item @on-item-click="handler" :selected="$route.path== '/personTask/taskWait'" >
+      <tab-item :selected="$route.path== '/personTask/taskWait'" >
         <router-link to="/personTask/taskWait" tag="div">代办</router-link>
       </tab-item >
       <tab-item :selected="$route.path=='/personTask/taskFinished'" >

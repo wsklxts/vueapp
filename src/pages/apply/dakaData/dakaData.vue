@@ -77,12 +77,16 @@
 
         let formData={company:company, globalEmpId: empId ,pageIndex: pageIndex, size: 10}
 
-        this.$http.post("/MobileService/KQRecord.asmx/GetRecord",formData,{showLoad:false})
+        var mockdata = "{\"data\":[{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":1,\"kqrfdatetime\":\"2017-09-25 14:25:26\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":2,\"kqrfdatetime\":\"2017-09-25 14:24:40\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":3,\"kqrfdatetime\":\"2017-09-25 14:13:38\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":4,\"kqrfdatetime\":\"2017-09-25 12:47:36\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":5,\"kqrfdatetime\":\"2017-09-25 12:47:13\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":6,\"kqrfdatetime\":\"2017-09-25 12:46:40\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":7,\"kqrfdatetime\":\"2017-09-25 12:44:09\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":8,\"kqrfdatetime\":\"2017-09-25 12:41:32\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":9,\"kqrfdatetime\":\"2017-09-25 12:37:02\",\"kqrftype2\":\"上下班\"},{\"kqrcardno\":\"TS00001_40\",\"kqrdeviceno\":\"00\",\"kqrifcancel\":false,\"row_number\":10,\"kqrfdatetime\":\"2017-09-25 12:23:16\",\"kqrftype2\":\"上下班\"}],\"visitTime\":\"2019-01-10 14:58:13\"}"
+
+//        console.log(eval("(" +mockdata + ")"));
+        mockdata = JSON.parse(mockdata)
+
+        this.$http.post("/MobileService/KQRecord.asmx/GetRecord",formData)
           .then(r=>{
           console.log(r)
         let data= eval("(" + r.data.d + ")");
         data=data.data
-        console.log(data);
         if(data){
           for(let d in data){
             this.loadMoreDom=true

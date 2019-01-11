@@ -14,9 +14,9 @@ import stores from "../store"
 
 
 if(process.env.NODE_ENV=="development"){
-  axios.defaults.baseURL="api"
+  axios.defaults.baseURL="devApi"
 }else if(process.env.NODE_ENV=="production"){
-  axios.defaults.baseURL = 'http://localhost:8001';
+  axios.defaults.baseURL = 'http://jilalahk.com/api';
 }
 
 

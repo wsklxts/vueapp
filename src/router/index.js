@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store/index'
 import HelloWorld from '@/pages/HelloWorld/HelloWorld'
-import test from '@/pages/test'
+import renderControl from '@/pages/renderControl'
 import personTask from '@/pages/personTask/personTask'
 
 
@@ -63,6 +63,7 @@ const router = new Router({
     })
 
   },
+  mode: "history",
   routes: [
     {
       path: '*',
@@ -75,9 +76,9 @@ const router = new Router({
       component: login
     },
     {
-      path: '/test',
-      name: 'test',
-      component: test
+      path: '/renderControl',
+      name: 'renderControl',
+      component: renderControl
     },
     {
       path: '/personTask',
@@ -250,31 +251,31 @@ const router = new Router({
   ]
 })
 //注册全局钩子用来拦截导航
-router.beforeEach((to, from, next) => {
-  //获取store里面的token
-  //let token = store.state.token;
-  //判断要去的路由有没有requiresAuth
-  if (to.meta.requiresAuth) {
-    if(store.state.isLogin=="1") { // 已经登陆
-      next()   // 正常跳转到你设置好的页面
-    }else{
-      next({
-          path: '/login',
-          query: { redirect: to.fullPath } // 将刚刚要去的路由path作为参数，方便登录成功后直接跳转到该路由
-        });
-    }
-    //if (token) {
-    //  next();
-    //} else {
-    //  next({
-    //    path: '/login',
-    //    query: { redirect: to.fullPath } // 将刚刚要去的路由path作为参数，方便登录成功后直接跳转到该路由
-    //  });
-    //}
-  } else {
-    next();
-  }
-});
+//router.beforeEach((to, from, next) => {
+//  //获取store里面的token
+//  //let token = store.state.token;
+//  //判断要去的路由有没有requiresAuth
+//  //if (to.meta.requiresAuth) {
+//  //  if(store.state.isLogin=="1") { // 已经登陆
+//  //    next()   // 正常跳转到你设置好的页面
+//  //  }else{
+//  //    next({
+//  //        path: '/login',
+//  //        query: { redirect: to.fullPath } // 将刚刚要去的路由path作为参数，方便登录成功后直接跳转到该路由
+//  //      });
+//  //  }
+//    //if (token) {
+//    //  next();
+//    //} else {
+//    //  next({
+//    //    path: '/login',
+//    //    query: { redirect: to.fullPath } // 将刚刚要去的路由path作为参数，方便登录成功后直接跳转到该路由
+//    //  });
+//    //}
+//  //} else {
+//  //  next();
+//  //}
+//});
 
 
 

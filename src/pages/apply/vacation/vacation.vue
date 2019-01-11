@@ -3,6 +3,7 @@
     <XHeader  title="请假" :left-options="{showBack: true}" >
       <a slot="right" @click="detailBtn"> 详情</a>
     </XHeader>
+
     <div class="template">
       <group>
         <Cell  title="请假类型" :value="form.type" is-link @click.native="select()"></Cell>

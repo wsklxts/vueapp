@@ -19,6 +19,7 @@
       attrs: {
         type: Object,
         default() {
+
           return {}
         }
       }

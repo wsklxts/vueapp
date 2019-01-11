@@ -12,7 +12,7 @@ let h="localhost"
 //let h="192.168.43.246"
 let hh = "http://localhost:8001"
 
-//let h = "192.168.0.33"
+h = "0.0.0.0"
 
 
 
@@ -23,11 +23,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
-        target: 'http://localhost:8001',// 请换成你的地址
+      '/devApi': {
+        target: 'http://localhost:8888/api',// 请换成你的地址
+        // target: 'http://jilalahk.com/api',// 请换成你的地址
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/devApi': ''
         }
       }
     },
@@ -58,10 +59,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../docs/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
     //proxyTable: {
