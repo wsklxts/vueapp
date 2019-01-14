@@ -19,10 +19,12 @@ img{
   width:100%
 }
 #app{
-  margin-bottom: 0.95rem;
+  /*margin-bottom: 0.95rem;*/
+  /*overflow: hidden;*/
   height: 100%;
   position: absolute;
   width:100%;
+
 }
 .vux-header{
   position:fixed !important;

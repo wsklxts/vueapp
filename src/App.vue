@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <!--<loading :show="isLoading" :text="loadingText"></loading>-->
     <loading v-model="isLoading" :text="loadingText"></loading>
     <toast v-model="errMsgToast" type="warn" width="5rem">{{errMsgText}}</toast>
@@ -27,7 +27,6 @@ export default {
   beforeCreate(){
   },
   mounted(){
-    console.log("app");
   },
   updated(){
 
@@ -63,7 +62,7 @@ export default {
   .routerView{
     z-index: 1000;
     background: white;
-    height:100%;
+    min-height:100%;
     width:100%;
   }
   .spinnerWrap{

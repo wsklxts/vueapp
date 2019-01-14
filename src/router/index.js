@@ -251,6 +251,16 @@ const router = new Router({
 
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  console.log("beforeEach");
+  document.getElementById("app").style.overflow="hidden";
+  next()
+})
+router.afterEach((to, from) => {
+  console.log("afterEach");
+  document.getElementById("app").style.overflow="auto";
+})
 //注册全局钩子用来拦截导航
 //router.beforeEach((to, from, next) => {
 //  //获取store里面的token

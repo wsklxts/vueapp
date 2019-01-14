@@ -177,6 +177,7 @@
 
   .apply{
     padding:0.10rem;
+    margin-bottom: 0.95rem;
     .banner{
       padding:0.10rem;
     }

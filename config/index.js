@@ -64,7 +64,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',
+    assetsPublicPath: '/vueapp/',
     //proxyTable: {
     //  '/api': {
     //    target: 'http://localhost:8001/MobileService/Web/WebPage',// 请换成你的地址
