@@ -80,6 +80,7 @@
     .tips{
       padding:0.36rem;
       width: 100%;
+      box-sizing: border-box;
     }
     .name{
       h3{

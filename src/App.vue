@@ -7,7 +7,7 @@
     <keep-alive>
     </keep-alive>
 
-    <router-view v-transition></router-view>
+    <router-view v-transition class="routerView"></router-view>
 
   </div>
 </template>
@@ -60,7 +60,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+  .routerView{
+    z-index: 1000;
+    background: white;
+    height:100%;
+    width:100%;
+  }
   .spinnerWrap{
     position: fixed;
     z-index: 1000;

@@ -20,6 +20,9 @@ img{
 }
 #app{
   margin-bottom: 0.95rem;
+  height: 100%;
+  position: absolute;
+  width:100%;
 }
 .vux-header{
   position:fixed !important;

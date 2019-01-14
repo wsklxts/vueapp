@@ -24,7 +24,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/devApi': {
-        target: 'http://localhost:8888/api',// 请换成你的地址
+        target: 'http://127.0.0.1:8888/api',// 请换成你的地址
         // target: 'http://jilalahk.com/api',// 请换成你的地址
         changeOrigin: true,
         pathRewrite: {
