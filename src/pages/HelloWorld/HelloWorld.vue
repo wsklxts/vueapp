@@ -120,6 +120,9 @@
 
 
 <style lang="less" type="text/less" scoped>
+  .template{
+    margin-bottom:0.95rem;
+  }
   .btnWrap{
   button.weui-btn{
     border-radius:0 !important;
