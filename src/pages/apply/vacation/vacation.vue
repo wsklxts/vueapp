@@ -300,7 +300,6 @@
   .uploadNameWrap{
     text-align: center;
   }
-
   .title{
     font-size:0.36rem;
     &>div{
