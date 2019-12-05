@@ -35,7 +35,7 @@
 //        attrs:json
 //      })
       var api = "http://127.0.0.1:8888/api/vueappCustomControl/"
-      var jilala = "vueappCustomControl/"
+      var jilala = "vueappCustomControl"
       this.$http.get(jilala, {})
         .then(r => {
         console.log(r)
